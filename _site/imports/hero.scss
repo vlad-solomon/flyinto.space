@@ -1,0 +1,39 @@
+.page-content{
+	height: 100%;
+	color: #fff;
+	background-color: #080808;
+	.hero{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		height: 100%;
+		width: 1425px;
+		margin: 0 auto;
+		h1{
+			font-family: Monument;
+			font-size: 5.3125rem;
+			line-height: 130%;
+		}
+		h2{
+			font-family: Futura Book Italic;
+			font-size: 1.5rem;
+			line-height: 200%;
+			width: 715px;
+			margin: 110px 0 150px 0;
+		}
+		.cta{
+			font-family: Monument;
+			font-size: 1.25rem;
+			padding: 20px 80px;
+			box-sizing: border-box;
+			border: 4px solid #fff;
+			cursor: pointer;
+			transition: 300ms;
+			&:hover{
+				color: #080808;
+				background-color: #fff;
+			}
+		}
+	}
+}

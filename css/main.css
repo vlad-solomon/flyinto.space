@@ -1,0 +1,107 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: Monument;
+  src: url("../fonts/MonumentExtended-Regular.otf");
+}
+@font-face {
+  font-family: Futura Book Italic;
+  src: url("../fonts/FuturaBook-Italic.ttf");
+}
+:root {
+  font-size: 16px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.page-content {
+  height: 100%;
+  color: #fff;
+  background-color: #080808;
+}
+.page-content .hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  width: 1425px;
+  margin: 0 auto;
+}
+.page-content .hero h1 {
+  font-family: Monument;
+  font-size: 5.3125rem;
+  line-height: 130%;
+}
+.page-content .hero h2 {
+  font-family: Futura Book Italic;
+  font-size: 1.5rem;
+  line-height: 200%;
+  width: 715px;
+  margin: 110px 0 150px 0;
+}
+.page-content .hero .cta {
+  font-family: Monument;
+  font-size: 1.25rem;
+  padding: 20px 80px;
+  box-sizing: border-box;
+  border: 4px solid #fff;
+  cursor: pointer;
+  transition: 300ms;
+}
+.page-content .hero .cta:hover {
+  color: #080808;
+  background-color: #fff;
+}
