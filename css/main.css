@@ -56,6 +56,10 @@ table {
   font-family: Futura Book Italic;
   src: url("../fonts/FuturaBook-Italic.ttf");
 }
+@font-face {
+  font-family: Futura Light Condensed;
+  src: url("../fonts/FuturaLight-Condensed.otf");
+}
 :root {
   font-size: 16px;
 }
@@ -104,4 +108,110 @@ body {
 .page-content .hero .cta:hover {
   color: #080808;
   background-color: #fff;
+}
+
+.swiper-container {
+  height: 100%;
+  position: relative;
+}
+.swiper-container .button {
+  position: absolute;
+  z-index: 2;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  top: calc(50% - 10px);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 300ms;
+}
+.swiper-container .button:hover {
+  transform: scale(1.5);
+}
+.swiper-container .button-prev {
+  left: 50px;
+  transform-origin: left;
+}
+.swiper-container .button-next {
+  right: 50px;
+  transform-origin: right;
+}
+.swiper-container .swiper-wrapper .swiper-slide .planet-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 1425px;
+  margin: 0 auto;
+  position: relative;
+}
+.swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .planet-details {
+  position: relative;
+  width: 100%;
+  top: -70px;
+}
+.swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .planet-details span {
+  position: absolute;
+  z-index: 1;
+}
+.swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .planet-details span.name {
+  font-family: Monument;
+  font-size: 9rem;
+  top: 100px;
+  text-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+.swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .planet-details span.desc {
+  right: 0;
+  font-family: Futura Book Italic;
+  width: 50%;
+  top: 270px;
+  font-size: 1.5rem;
+  line-height: 200%;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+  margin-top: 50px;
+}
+.swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .planet-details .planet {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 660px;
+  width: 660px;
+  background-color: grey;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .planet-details .planet::before {
+  position: absolute;
+  content: url("../img/ellipse.png");
+  animation: ellipse-rotate 300s forwards infinite linear;
+}
+@keyframes ellipse-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .distance {
+  position: absolute;
+  bottom: 70px;
+}
+.swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .distance span {
+  display: block;
+  text-align: center;
+  font-family: Futura Light Condensed;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  opacity: 0.7;
+}
+.swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .distance span:nth-child(2) {
+  font-family: Monument;
+  font-size: 3rem;
+  opacity: 1;
+  margin-top: 4px;
+}
+.swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .planet-cta {
+  top: initial;
+  bottom: 25px;
 }
