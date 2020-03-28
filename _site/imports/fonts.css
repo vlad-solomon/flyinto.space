@@ -4,12 +4,7 @@
 }
 
 @font-face{
-	font-family: Futura Book Italic; 
-	src: url("../fonts/FuturaBook-Italic.ttf");
-}
-
-@font-face{
-	font-family: Futura Light Condensed; 
-	src: url("../fonts/FuturaLight-Condensed.otf");
+	font-family: Poppins Regular; 
+	src: url("../fonts/Poppins-Regular.ttf");
 }
 

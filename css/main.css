@@ -53,12 +53,8 @@ table {
   src: url("../fonts/MonumentExtended-Regular.otf");
 }
 @font-face {
-  font-family: Futura Book Italic;
-  src: url("../fonts/FuturaBook-Italic.ttf");
-}
-@font-face {
-  font-family: Futura Light Condensed;
-  src: url("../fonts/FuturaLight-Condensed.otf");
+  font-family: Poppins Regular;
+  src: url("../fonts/Poppins-Regular.ttf");
 }
 :root {
   font-size: 16px;
@@ -90,8 +86,8 @@ body {
   line-height: 130%;
 }
 .page-content .hero h2 {
-  font-family: Futura Book Italic;
-  font-size: 1.5rem;
+  font-family: Poppins Regular;
+  font-size: 1.45rem;
   line-height: 200%;
   width: 715px;
   margin: 110px 0 150px 0;
@@ -114,6 +110,26 @@ body {
   height: 100%;
   position: relative;
 }
+.swiper-container::before {
+  content: url("../img/ellipse.png");
+  display: block;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: calc(50% - 120px);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: ellipse-rotate 300s forwards infinite linear;
+}
+@keyframes ellipse-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .swiper-container .button {
   position: absolute;
   z-index: 2;
@@ -124,9 +140,16 @@ body {
   border-radius: 10px;
   cursor: pointer;
   transition: 300ms;
+  outline: none;
 }
 .swiper-container .button:hover {
   transform: scale(1.5);
+}
+.swiper-container .button.swiper-button-disabled {
+  opacity: 0;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  pointer-events: none;
 }
 .swiper-container .button-prev {
   left: 50px;
@@ -163,11 +186,11 @@ body {
 }
 .swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .planet-details span.desc {
   right: 0;
-  font-family: Futura Book Italic;
+  font-family: Poppins Regular;
   width: 50%;
   top: 270px;
-  font-size: 1.5rem;
-  line-height: 200%;
+  font-size: 1.325rem;
+  line-height: 220%;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
   margin-top: 50px;
 }
@@ -178,19 +201,18 @@ body {
   align-items: center;
   height: 660px;
   width: 660px;
-  background-color: grey;
-  border-radius: 50%;
   margin: 0 auto;
 }
-.swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .planet-details .planet::before {
-  position: absolute;
-  content: url("../img/ellipse.png");
-  animation: ellipse-rotate 300s forwards infinite linear;
+.swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .planet-details .planet img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
-@keyframes ellipse-rotate {
-  100% {
-    transform: rotate(360deg);
-  }
+.swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .planet-details .planet #rings {
+  position: absolute;
+  width: unset;
+  height: 52.2%;
 }
 .swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .distance {
   position: absolute;
@@ -199,7 +221,7 @@ body {
 .swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .distance span {
   display: block;
   text-align: center;
-  font-family: Futura Light Condensed;
+  font-family: Poppins Regular;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-size: 0.8125rem;
@@ -214,4 +236,118 @@ body {
 .swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .planet-cta {
   top: initial;
   bottom: 25px;
+}
+
+.info-wrapper {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #080808;
+}
+.info-wrapper #close-info {
+  height: 45px;
+  width: 90px;
+  position: absolute;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  border: 4px solid #fff;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-top: none;
+  transition: 300ms;
+  cursor: pointer;
+  z-index: 1;
+}
+.info-wrapper #close-info:hover {
+  background-color: #fff;
+}
+.info-wrapper .info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: none;
+  width: 1425px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 175px 0 75px 0;
+  pointer-events: none;
+  opacity: 0.3;
+}
+.info-wrapper .info .image {
+  width: 13%;
+  margin-right: 48px;
+}
+.info-wrapper .info .image img {
+  width: 100%;
+}
+.info-wrapper .info .text {
+  width: 66%;
+  margin-top: -60px;
+  margin-right: 48px;
+}
+.info-wrapper .info .text .title {
+  font-family: Monument;
+  font-size: 1.5rem;
+  letter-spacing: 0.025em;
+  margin: 50px 0 22px 0;
+}
+.info-wrapper .info .text .title:first-child {
+  margin-top: 0;
+}
+.info-wrapper .info .text p {
+  font-family: Poppins Regular;
+  font-size: 1.25rem;
+  line-height: 175%;
+  text-align: justify;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+.info-wrapper .info .text .button-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  width: 265px;
+  font-family: Monument;
+  font-size: 1.375rem;
+  border: 3px solid #fff;
+  margin: 100px auto 0 auto;
+  text-align: center;
+  cursor: pointer;
+  transition: 300ms;
+}
+.info-wrapper .info .text .button-top:hover {
+  color: #080808;
+  background-color: #fff;
+}
+.info-wrapper .info .properties .prop {
+  margin-bottom: 30px;
+}
+.info-wrapper .info .properties .prop span {
+  font-family: Poppins Regular;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  display: block;
+}
+.info-wrapper .info .properties .prop span:first-child {
+  margin-bottom: 10px;
+}
+.info-wrapper .info .properties .prop .value {
+  font-family: Monument;
+  font-size: 1.5rem;
+  text-transform: initial;
+  margin-bottom: 8px;
+}
+.info-wrapper .info .properties .prop .value sup {
+  position: relative;
+  top: -10px;
+  left: 2px;
+  font-size: 1.2rem;
 }
