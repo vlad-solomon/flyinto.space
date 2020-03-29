@@ -18,6 +18,21 @@ $(document).ready(function(){
 		}
 	});
 
+	$(".cta").click(function(){
+		$($(".hero *").get().reverse()).each(function(i){
+			setTimeout(function(){
+				$($(".hero *").get().reverse()).eq(i).css({"opacity" : "0"})
+			}, 200 * i)
+		});
+		setTimeout(function(){
+			$(".swiper-container").css("opacity" , "1");
+			$(".hero").css({
+				"z-index" : "-1",
+				"pointer-events" : "none"
+			})
+		}, 800)
+	});
+
 	function enableSwiping(){
 		if($(window).width() <= 900){
 			$(".swiper-container").removeClass("swiper-no-swiping");
@@ -41,8 +56,20 @@ $(document).ready(function(){
 		var planetInfo = planet + "-info";
 		$(planet).click(function(){
 			$(".info-wrapper").css({
-				"z-index" : "1"
+				"z-index" : "1",
+				"transform" : "translateY(0)",
 			});
+			setTimeout(function(){
+				$(".info-wrapper").css("overflow" , "auto");
+				$("#close-info").css({
+					"opacity" : "1",
+					"pointer-events" : "auto"
+				})
+			}, 1000)
+			$(".swiper-container").css({
+				"transform" : "translateY(-200%)",
+				"opacity" : "0"
+			})
 			$(planetInfo).css({
 				"pointer-events" : "auto",
 				"opacity" : "1",
@@ -53,14 +80,29 @@ $(document).ready(function(){
 
 	// close info
 	$("#close-info").click(function(){
-		$(".info-wrapper").css({
-			"z-index" : "-1"
-		});
-		$(".info").css({
-			"pointer-events" : "none",
+		$(this).css({
 			"opacity" : "0",
-			"display" : "none"
-		})
+			"pointer-events" : "none"
+		});
+		$(".info-wrapper").css("overflow" , "hidden")
+		setTimeout(function(){
+			$(".info-wrapper").css({
+				"transform" : "translateY(100%)"
+			});
+			$(".swiper-container").css({
+				"transform" : "translateY(-100%)",
+				"opacity" : "1"
+			})
+			$(".info").css({
+				"pointer-events" : "none",
+				"opacity" : "0",
+			})
+		}, 300)
+		setTimeout(function(){
+			$(".info").css({
+				"display" : "none"
+			})
+		}, 1000)
 	});
 
 });

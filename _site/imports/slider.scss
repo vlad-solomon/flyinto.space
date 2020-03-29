@@ -1,6 +1,9 @@
 .swiper-container{
 	height: 100%;
 	position: relative;
+	transform: translateY(-100%);
+	opacity: 0;
+	transition: 1s;
 	&::before{
 		content: url("../img/ellipse.png");
 		display: block;
