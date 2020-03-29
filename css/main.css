@@ -64,6 +64,11 @@ html,
 body {
   height: 100%;
   width: 100%;
+  overflow: hidden;
+}
+
+.page-content {
+  overflow: hidden;
 }
 
 .page-content {
@@ -202,7 +207,7 @@ body {
   width: 660px;
   margin: 0 auto;
 }
-.swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .planet-details .planet img {
+.swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .planet-details .planet img:first-child {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -210,8 +215,8 @@ body {
 }
 .swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .planet-details .planet #rings {
   position: absolute;
-  width: unset;
-  height: 52.315%;
+  height: 50.8%;
+  transform: translateX(-0.5px);
 }
 .swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .distance {
   position: absolute;
@@ -286,7 +291,7 @@ body {
 }
 @media (max-width: 1000px) {
   .swiper-container .swiper-wrapper .swiper-slide .planet-wrapper .planet-details .planet #rings {
-    transform: rotate(-50deg);
+    transform: rotate(-50deg) translateX(-0.5px);
   }
 }
 @media (max-width: 900px) {
@@ -464,24 +469,6 @@ body {
   text-align: justify;
   margin-bottom: 15px;
   opacity: 0.9;
-}
-.info-wrapper .info .text .button-top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 55px;
-  width: 265px;
-  font-family: Monument;
-  font-size: 1.375rem;
-  border: 3px solid #fff;
-  margin: 100px auto 0 auto;
-  text-align: center;
-  cursor: pointer;
-  transition: 300ms;
-}
-.info-wrapper .info .text .button-top:hover {
-  color: #080808;
-  background-color: #fff;
 }
 .info-wrapper .info .properties .prop {
   margin-bottom: 30px;

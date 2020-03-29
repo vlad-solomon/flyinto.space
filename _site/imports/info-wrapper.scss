@@ -69,24 +69,6 @@
 				margin-bottom: 15px;
 				opacity: 0.9;
 			}
-			.button-top{
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				height: 55px;
-				width: 265px;
-				font-family: Monument;
-				font-size: 1.375rem;
-				border: 3px solid #fff;
-				margin: 100px auto 0 auto;
-				text-align: center;
-				cursor: pointer;
-				transition: 300ms;
-				&:hover{
-					color: #080808;
-					background-color: #fff;
-				}
-			}
 		}
 		.properties{
 			.prop{

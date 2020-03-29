@@ -95,7 +95,7 @@
 						height: 660px;
 						width: 660px;
 						margin: 0 auto;
-						img{
+						img:first-child{
 							height: 100%;
 							width: 100%;
 							object-fit: cover;
@@ -103,9 +103,10 @@
 						}
 						#rings{
 							position: absolute;
+							height: 50.8%;
+							transform: translateX(-0.5px);
 							// background-color: red;
-							width: unset;
-							height: 52.315%;
+							// width: unset;
 						}
 						// &::before{
 						// 	position: absolute;
@@ -234,7 +235,7 @@
 					.planet-details{
 						.planet{
 							#rings{
-								transform: rotate(-50deg);
+								transform: rotate(-50deg) translateX(-0.5px);
 							}
 						}
 					}

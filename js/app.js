@@ -18,6 +18,22 @@ $(document).ready(function(){
 		}
 	});
 
+	function enableSwiping(){
+		if($(window).width() <= 900){
+			$(".swiper-container").removeClass("swiper-no-swiping");
+			mySwiper.params.speed = 250
+		} else{
+			$(".swiper-container").addClass("swiper-no-swiping");
+			mySwiper.params.speed = 1000
+		}
+	}
+
+	enableSwiping();
+
+	$(window).resize(function(){
+		enableSwiping();
+	});
+
 	const planets = ["mercury","venus","earth","mars","jupiter","saturn","uranus","neptune"]
 
 	$.each(planets, function(index, planetId){
@@ -47,11 +63,4 @@ $(document).ready(function(){
 		})
 	});
 
-	// scroll to top of the page when back to top button is pressed
-	$(".button-top").click(function(){
-		$(this).parents().eq(2).animate({
-			scrollTop: 0
-		}, 500)
-	})
-	
 });
