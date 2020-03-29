@@ -18,18 +18,6 @@ $(document).ready(function(){
 		}
 	});
 
-	// function checkSlide(){
-	// 	if($(".swiper-slide").first().hasClass("swiper-slide-active")){
-	// 		console.log("first")
-	// 	} else{
-	// 		console.log("nope")
-	// 	}
-	// }
-
-	// checkSlide();
-
-	
-
 	const planets = ["mercury","venus","earth","mars","jupiter","saturn","uranus","neptune"]
 
 	$.each(planets, function(index, planetId){
@@ -65,5 +53,5 @@ $(document).ready(function(){
 			scrollTop: 0
 		}, 500)
 	})
-
+	
 });
