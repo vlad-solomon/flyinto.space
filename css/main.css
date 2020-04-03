@@ -60,6 +60,10 @@ table {
   font-size: 16px;
 }
 
+*::selection {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 html,
 body {
   height: 100%;
@@ -539,6 +543,7 @@ body {
   font-size: 0.875rem;
   text-transform: uppercase;
   display: block;
+  white-space: nowrap;
 }
 .info-wrapper .info .properties .prop span:first-child {
   margin-bottom: 10px;
